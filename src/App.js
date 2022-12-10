@@ -25,6 +25,8 @@ function App() {
       // Segun las propiedades obtenidas en la linea anterior se crea un conjunto de monedas  
       const valores = nombresDeLasMonedas.map((nombreMoneda) => valoresMonetarios[nombreMoneda]);
       
+      valores.toString().replace(/\B(?=(\d{3})+(?!\d)\.?)/g, ".");
+
       valores.sort((moneda1, moneda2) => { // Ordenar alfabeticamente por nombre
         if(moneda1.nombre.toLowerCase() < moneda2.nombre.toLowerCase()) return -1;
         if(moneda1.nombre.toLowerCase() > moneda2.nombre.toLowerCase()) return 1;
@@ -40,16 +42,16 @@ function App() {
 
   return (
     <main>
-      <IndicadoresDiarios valoresMonetarios={valoresMonetarios}/>
       <section>
         <MiApi setValoresMonetarios={setValoresMonetarios}/>
       </section>
-      <section>
-        <Listado monedas={arregloMonedas()} termino={termino} />
-      </section>
-      <section>
+      <section className='buscar'>
         <Buscador setTermino={setTermino}/>
       </section>
+      <section className='listar'>
+        <Listado monedas={arregloMonedas()} termino={termino} />
+      </section>
+
     </main>
 
   );

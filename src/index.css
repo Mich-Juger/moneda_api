@@ -11,3 +11,38 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+
+
+.indicadores {
+  min-height: 100vh;
+  display: grid;                        
+  grid-template-columns: auto auto auto auto;
+  grid-gap: 30px;   
+
+}
+
+
+.tarjetas {
+  border: solid 1px;
+  background-color: rgba(0, 0, 0, 0.847);
+  text-align: center;
+  border-radius: 10px;
+  width: 300px;
+  padding: 10px;
+
+}
+
+/* indicadores*/
+
+.buscador {
+  margin: 50px;
+}
+
+input {
+  width: 400px;
+}
+
+.listado {
+  margin: 50px;
+}

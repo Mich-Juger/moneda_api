@@ -1,30 +1,24 @@
+import IndicadoresDiarios from './Indicadores.jsx'
+
 function Listado(props) {
     return(
-        <section>
+        <section className="listado">
         <h4>Listado Monedas</h4>
-
-     
-        {props.monedas.length === 0 ? // Mientras api no responda no mostrar resultados con return vacío
-            <p> No existen monedas</p> : 
+      
+        { 
             
-            props.termino.length === 0 ? // buscador
-            props.monedas.map( (moneda) =>  ( // Por cada elemento de monedas mostrar su nombre y valor
-                <p key={moneda.codigo}> 
-                    {moneda.nombre} - {moneda.valor}
-                </p>            
-            )) : // Filtrar
-            props.monedas.filter( moneda => moneda.nombre.includes(props.termino)).map( (moneda) =>  (
-                <p key={moneda.codigo}> 
-                    {moneda.nombre} - {moneda.valor}
-                </p>            
-            ))
-        }    
+            props.termino.length === 0 ? // Si no busco o filtro por nombre se muestra la lista completa
+            <IndicadoresDiarios monedas={props.monedas}/>
 
+             : // Al filtrar por nombre muestro solo con las que coinciden 
+             <IndicadoresDiarios monedas={props.monedas.filter( moneda => moneda.nombre.includes(props.termino))}/>
+
+            
+        }    
 
         </section>
     );
 }
 
 export default Listado;
-
 

@@ -5,7 +5,7 @@ function Buscador(props) {
     }
 
     return(
-        <article>
+        <article className="buscador">
             <div className="col-4">
                 <input onChange={filtrarListado} type="search" name="buscador" id="buscador" placeholder="Ingrese el nombre de moneda"/>            
             </div>
