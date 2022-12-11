@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import Buscador from './Componentes/Buscador.jsx';
-import IndicadoresDiarios from './Componentes/Indicadores.jsx';
 import Listado from './Componentes/Listado.jsx';
 import MiApi from './Componentes/MiApi.jsx';
 
@@ -9,11 +8,11 @@ import MiApi from './Componentes/MiApi.jsx';
 
 
 function App() {
-  const [valoresMonetarios, setValoresMonetarios ] = useState ({});
-  const [termino, setTermino] = useState('');
+  const [valoresMonetarios, setValoresMonetarios ] = useState ({});//valores de la api
+  const [termino, setTermino] = useState(''); // filtrado
 
 
-  // Transformar retorno de api a un arreglo - listado de monedas
+  // Transformar los valores de api a un arreglo - listado de monedas
   function arregloMonedas() {
     // Mientras api no responda no mostrar resultados con return vacío
     if (Object.keys(valoresMonetarios).length === 0)

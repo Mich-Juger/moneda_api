@@ -3,7 +3,7 @@ import IndicadoresDiarios from './Indicadores.jsx'
 function Listado(props) {
     return(
         <section className="listado">
-        <h4>Listado Monedas</h4>
+        <h2>Indicadores económicos:</h2>
       
         { 
             

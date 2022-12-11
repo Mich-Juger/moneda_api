@@ -10,8 +10,8 @@ function IndicadoresDiarios(props) {
 
             props.monedas.map( (moneda) =>  ( // itera el listado de moneda
                 <div className="tarjetas" key={moneda.codigo}>
-                    <h2>{moneda.nombre}</h2>
-                    {moneda.valor.toString().replace(/\B(?=(\d{3})+(?!\d)\.?)/g, ",")}                                    
+                    <h3>{moneda.nombre}</h3>
+                    <p className="tarjetas-css">${moneda.valor.toString().replace(/\B(?=(\d{3})+(?!\d)\.?)/g, ",")}</p>                                    
             
                 </div>
             ))}
